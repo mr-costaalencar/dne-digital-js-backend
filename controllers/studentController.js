@@ -10,6 +10,15 @@ exports.getStudents = async (req, res) => {
   }
 };
 
+exports.getStudent = async (req, res) => {
+  try {
+    const student = await Student.find({ userId: req.user._id, _id: req.params.id });
+    res.json(student);
+  } catch (error) {
+    res.status(500).json({ message: "Erro do servidor" });
+  }
+};
+
 exports.createStudent = async (req, res) => {
   const { name, cpf, birthDate, institution, course, issuer, validity } =
     req.body;
