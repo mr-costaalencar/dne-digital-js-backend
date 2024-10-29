@@ -1,0 +1,63 @@
+### Signup
+POST http://localhost:5000/api/auth/signup
+Content-Type: application/json
+
+{
+  "email": "testuser@example.com",
+  "password": "password123",
+  "name": "Test User"
+}
+
+### Login
+POST http://localhost:5000/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "renan.alencar@esuda.edu.br",
+  "password": "password123"
+}
+
+### Retornar todos os estudantes (Protegido)
+GET http://localhost:5000/api/students
+Authorization: Bearer {{jwt_token}}
+
+### Criar um estudante (Protegido)
+POST http://localhost:5000/api/students
+Content-Type: application/json
+Authorization: Bearer {{jwt_token}}
+
+{
+  "name": "John Doe",
+  "cpf": "123.456.789-00",
+  "birthDate": "1990-01-01",
+  "institution": "University Name",
+  "course": "Computer Science",
+  "issuer": "University Admin",
+  "validity": "2024-12-31"
+}
+
+### Retornar um único estudante pelo ID (Protegido)
+# Substitua `student_id` com o ID do estudante para testar este endpoint
+GET http://localhost:5000/api/students/{{student_id}}
+Authorization: Bearer {{jwt_token}}
+
+### Atualiza um Estudante pelo ID (Protegido)
+# Substitua `student_id` com o ID do estudante para atualizar
+PUT http://localhost:5000/api/students/{{student_id}}
+Content-Type: application/json
+Authorization: Bearer {{jwt_token}}
+
+{
+  "name": "John Smith",
+  "cpf": "987.654.321-00",
+  "birthDate": "1991-02-02",
+  "institution": "Updated University",
+  "course": "Information Technology",
+  "issuer": "Admin Update",
+  "validity": "2025-12-31"
+}
+
+### Deletar um estudante pelo ID (Protegido)
+# Substitua `student_id` com o ID do estudante para apagar
+DELETE http://localhost:5000/api/students/{{student_id}}
+Authorization: Bearer {{jwt_token}}
