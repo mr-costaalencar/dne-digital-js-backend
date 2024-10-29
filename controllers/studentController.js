@@ -68,12 +68,12 @@ exports.deleteStudent = async (req, res) => {
 
   try {
     const student = await Student.findById(id);
-
+    
     if (student.userId.toString() !== req.user._id.toString()) {
       return res.status(403).json({ message: "Não autorizado" });
     }
-
-    await student.remove();
+    
+    await student.deleteOne({ _id: id });
     res.json({ message: "Estudante removido" });
   } catch (error) {
     res.status(400).json({ message: "Erro ao apagar estudante" });

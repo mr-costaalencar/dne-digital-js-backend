@@ -38,14 +38,14 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MjE2YzhmN
 
 ### Retorna uma única carteirinha pelo ID (Protegido)
 # Substitua `student_id` com o ID do estudante para testar este endpoint
-GET http://localhost:3000/api/students/67216d5a645c2cf8835f4bdc
+GET http://localhost:3000/api/students/67216ce3645c2cf8835f4bd7
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MjE2YzhmNjQ1YzJjZjg4MzVmNGJkMSIsImlhdCI6MTczMDI0Mzc2MCwiZXhwIjoxNzMwMjQ3MzYwfQ.iDV1zYNEzHvPTpVgNjFevEL6gBougbx7a9tc4NUIm_I
 
 ### Atualiza um Estudante pelo ID (Protegido)
 # Substitua `student_id` com o ID do estudante para atualizar
-PUT http://localhost:3000/api/students/672158ec996fe6d4c7623f74
+PUT http://localhost:3000/api/students/67216d5a645c2cf8835f4bdc
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MjE1ODIxOTk2ZmU2ZDRjNzYyM2Y2YyIsImlhdCI6MTczMDIzODU5NiwiZXhwIjoxNzMwMjQyMTk2fQ.HbeS6Jc8d8VPcpsFH0OqHfaaq6JHW7yGqRa_GpsW8n0
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MjE2YzhmNjQ1YzJjZjg4MzVmNGJkMSIsImlhdCI6MTczMDI0Mzc2MCwiZXhwIjoxNzMwMjQ3MzYwfQ.iDV1zYNEzHvPTpVgNjFevEL6gBougbx7a9tc4NUIm_I
 
 {
   "name": "Renan Costa Alencar",
@@ -53,11 +53,11 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MjE1ODIxO
   "birthDate": "1987-05-15",
   "institution": "Faculdade ESUDA",
   "course": "Segurança da Informação",
-  "issuer": "Admin Update",
+  "issuer": "Faculdade ESUDA",
   "validity": "2025-03-30"
 }
 
 ### Deleta um estudante pelo ID (Protegido)
 # Substitua `student_id` com o ID do estudante para apagar
-DELETE http://localhost:3000/api/students/672158ec996fe6d4c7623f74
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MjE1ODIxOTk2ZmU2ZDRjNzYyM2Y2YyIsImlhdCI6MTczMDIzODU5NiwiZXhwIjoxNzMwMjQyMTk2fQ.HbeS6Jc8d8VPcpsFH0OqHfaaq6JHW7yGqRa_GpsW8n0
+DELETE http://localhost:3000/api/students/67216d5a645c2cf8835f4bdc
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MjE2YzhmNjQ1YzJjZjg4MzVmNGJkMSIsImlhdCI6MTczMDI0Mzc2MCwiZXhwIjoxNzMwMjQ3MzYwfQ.iDV1zYNEzHvPTpVgNjFevEL6gBougbx7a9tc4NUIm_I
