@@ -1,0 +1,63 @@
+### Cadastra um novo User
+POST http://localhost:3000/api/auth/signup
+Content-Type: application/json
+
+{
+  "email": "renan.alencar@esuda.edu.br",
+  "password": "password123",
+  "name": "Renan Alencar"
+}
+
+### Entra com um User existente
+POST http://localhost:3000/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "renan.alencar@esuda.edu.br",
+  "password": "password123"
+}
+
+### Retorna todos os Students (Protegido)
+GET http://localhost:3000/api/students
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MzI4Y2E0MDk4NjNjMWMwYmIzN2M5ZCIsImlhdCI6MTczMzE5Mzc5NiwiZXhwIjoxNzMzMTk3Mzk2fQ.Z2Xu9ogOo9Ho0nXnpjI5XI9fCdLTU2yvS1wr_K-cg2M
+
+### Cria um Student (Protegido)
+POST http://localhost:3000/api/students
+Content-Type: multipart/form-data
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MzI4Y2E0MDk4NjNjMWMwYmIzN2M5ZCIsImlhdCI6MTczMzE5Mzc5NiwiZXhwIjoxNzMzMTk3Mzk2fQ.Z2Xu9ogOo9Ho0nXnpjI5XI9fCdLTU2yvS1wr_K-cg2M
+
+profilePicture=@C:\\Users\\renan.a\\Downloads\\img\\avatar_small.jpg
+
+name=Renan Costa Alencar
+cpf=205.437.760-00
+birthDate=1987-05-15
+institution=Faculdade ESUDA
+course=Redes de Computadores
+issuer=Faculdade ESUDA
+validity=2025-03-30
+
+### Retorna um único Student pelo ID (Protegido)
+# Substitua `student_id` com o ID do Student para testar este endpoint
+GET http://localhost:3000/api/students/67216ce3645c2cf8835f4bd7
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MzI4Y2E0MDk4NjNjMWMwYmIzN2M5ZCIsImlhdCI6MTczMzE5Mzc5NiwiZXhwIjoxNzMzMTk3Mzk2fQ.Z2Xu9ogOo9Ho0nXnpjI5XI9fCdLTU2yvS1wr_K-cg2M
+
+### Atualiza um Student pelo ID (Protegido)
+# Substitua `student_id` com o ID do Student para atualizar
+PUT http://localhost:3000/api/students/674e5ef436bd451aad1f18d2
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MzI4Y2E0MDk4NjNjMWMwYmIzN2M5ZCIsImlhdCI6MTczMzE5Mzc5NiwiZXhwIjoxNzMzMTk3Mzk2fQ.Z2Xu9ogOo9Ho0nXnpjI5XI9fCdLTU2yvS1wr_K-cg2M
+
+{
+  "name": "Renan Costa Alencar",
+  "cpf": "987.654.321-00",
+  "birthDate": "1987-05-15",
+  "institution": "Faculdade ESUDA",
+  "course": "Segurança da Informação",
+  "issuer": "Faculdade ESUDA",
+  "validity": "2025-03-30"
+}
+
+### Deleta um Student pelo ID (Protegido)
+# Substitua `student_id` com o ID do Student para apagar
+DELETE http://localhost:3000/api/students/67216d5a645c2cf8835f4bdc
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MzI4Y2E0MDk4NjNjMWMwYmIzN2M5ZCIsImlhdCI6MTczMzE5Mzc5NiwiZXhwIjoxNzMzMTk3Mzk2fQ.Z2Xu9ogOo9Ho0nXnpjI5XI9fCdLTU2yvS1wr_K-cg2M
