@@ -39,7 +39,7 @@ jobs:
       - name: Build e Push da imagem
         run: |
           docker build -t ${{ vars.DOCKERHUB_USERNAME }}/dnedigitaljsbackend .
-          docker push ${{ secrets.DOCKERHUB_TOKEN }}/dnedigitaljsbackend
+          docker push ${{ vars.DOCKERHUB_USERNAME }}/dnedigitaljsbackend
 
   deploy-ec2:
     needs: docker-build-push
